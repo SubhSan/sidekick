@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+  --fg: #f0f0f0;
+  --bg: #0a0c16;
+  --muted: rgba(255,255,255,0.45);
+  --border: rgba(255,255,255,0.09);
+  --glass-bg: rgba(10,12,22,0.52);
+  --glass-blur: 20px;
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+}
+
+[data-theme="light"] {
+  --fg: #111827;
+  --bg: #f9fafb;
+  --muted: rgba(0,0,0,0.45);
+  --border: rgba(0,0,0,0.09);
+  --glass-bg: rgba(255,255,255,0.52);
+}
+
+html {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body, #root {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+}
+
+@keyframes sk-panel-in {
+  from {
+    transform: translateX(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sk-bm-panel-in {
+  from {
+    transform: translateX(-12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sk-focus-flash {
+  0% { opacity: 0; }
+  30% { opacity: 0.6; }
+  100% { opacity: 0; }
+}
+
+/* Weather Animations */
+@keyframes sk-twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+@keyframes sk-rain-0 { from { transform: translateY(-10px) translateX(0); } to { transform: translateY(110vh) translateX(8vw); } }
+@keyframes sk-rain-1 { from { transform: translateY(-10px) translateX(0); } to { transform: translateY(110vh) translateX(12vw); } }
+@keyframes sk-rain-2 { from { transform: translateY(-10px) translateX(0); } to { transform: translateY(110vh) translateX(16vw); } }
+@keyframes sk-drizzle { from { transform: translateY(-10px) translateX(0); } to { transform: translateY(110vh) translateX(4vw); } }
+@keyframes sk-snow {
+  from { transform: translateY(-10px); }
+  to { transform: translateY(105vh) translateX(var(--drift)) rotate(360deg); }
+}
+@keyframes sk-sunpulse {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+  50% { transform: translateX(-50%) scale(1.08); opacity: 0.85; }
+}
+@keyframes sk-sunray {
+  0%, 100% { opacity: 0.05; }
+  50% { opacity: 0.12; }
+}
+@keyframes sk-fog-l {
+  0%, 100% { transform: translateX(-8%); }
+  50% { transform: translateX(8%); }
+}
+@keyframes sk-fog-r {
+  0%, 100% { transform: translateX(5%); }
+  50% { transform: translateX(-5%); }
+}
+@keyframes sk-cloud-0 { from { transform: translateX(-280px); } to { transform: translateX(115vw); } }
+@keyframes sk-cloud-1 { from { transform: translateX(-350px); } to { transform: translateX(115vw); } }
+@keyframes sk-cloud-2 { from { transform: translateX(-400px); } to { transform: translateX(115vw); } }
+@keyframes sk-cloud-3 { from { transform: translateX(-480px); } to { transform: translateX(115vw); } }
+@keyframes sk-cloud-4 { from { transform: translateX(-520px); } to { transform: translateX(115vw); } }
+@keyframes sk-cloud-5 { from { transform: translateX(-560px); } to { transform: translateX(115vw); } }
+@keyframes sk-bm-panel-in {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes sk-panel-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
